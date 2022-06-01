@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lan="en">
+<head>
+	<meta charset="utf-8">
+	<title>Lab1</title>
+	<style type="text/css">
+		h5 {
+			color: red;
+		}
+		img {
+			width: 20%;
+			height: 20%;
+		}
+		.button {
+			padding: 10px;
+			margin-left: 20px;
+			font-size: 2em;
+			background-color: blueviolet;
+		}
+		ul {
+			margin-top: 0;
+			border-color: brown;
+			border-width: 5px;
+			border-style: solid;
+		}
+	</style>
+</head>
+<body>
+	<main>
+		<h5 id="heading" style="font-size: 24px">Heading 1</h5>
+		<img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/grapefruit-slice-332-332.jpg"/>
+		<p>Some inline text <a href="https://google.com">Google</a></p>
+
+		<button class="button" onclick="alert('clicked')">Start</button>
+		<p style="margin-bottom: 0;">Food:</p>
+		<ul>
+			<li>Dumplings</li>
+			<li>Raviolli</li>
+			<li>Okroshka</li>
+		</ul>
+		<label for="temp">Enter the temperature in Farenheit:</label>
+		<input id="temp" type="number" placeholder="42" />
+		<button id='convert-btn'>Convert</button>
+		<p>Result: <span id = "result"></span></p>
+	</main>
+	<script type="text/javascript">
+		const head = document.getElementById('heading');
+		head.textContent = "Lab 1";
+		console.log(head);
+		const button = document.getElementById('convert-btn');
+		const far = document.getElementById('temp');
+		const result = document.getElementById('result')
+		function convert() {
+			const val = parseInt(far.value);
+			const cel = (5/9)*(val-32)
+			result.innerText = `${val} in far equals ${cel} ikn cel`;
+		}
+		button.addEventListener('click', convert)
+	</script>
+</body>
+</html>

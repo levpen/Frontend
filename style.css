@@ -1,0 +1,41 @@
+body {
+    background-color:aliceblue;
+    color: grey;
+    font-family:sans-serif;
+    font-size: 16px;
+    line-height: 1.6em;
+    margin:0;
+}
+.container{
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+#body-header{
+    background-color:cadetblue;
+    color:white;
+    text-align: center;
+}
+#header-links{
+    background-color:darkgrey;
+    padding: 0;
+    list-style: none;
+}
+#header-links li{
+    display: inline;
+}
+#header-links a{
+    color:azure;
+    text-decoration: none;
+    font-size: large;
+    padding-right: 15px;
+}
+#footer-bar{
+    color: azure;
+    background-color: darkgrey;
+    padding: 10px;
+    text-align: center;
+}
+.icons{
+    width: 10px;
+}

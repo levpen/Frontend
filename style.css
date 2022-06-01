@@ -1,10 +1,15 @@
 body {
-    background-color:aliceblue;
+    background-image:url('../images/site-background.jpg'); 
+    background-size: 150%;
     color: grey;
     font-family:sans-serif;
     font-size: 16px;
     line-height: 1.6em;
     margin:0;
+    text-align: center;
+}
+ul{
+    padding: 0;
 }
 .container{
     width: 80%;
@@ -30,12 +35,47 @@ body {
     font-size: large;
     padding-right: 15px;
 }
+
 #footer-bar{
     color: azure;
     background-color: darkgrey;
     padding: 10px;
     text-align: center;
 }
-.icons{
-    width: 10px;
+#footer-icons{
+    width: 40px;
+    padding: 0px 5px 0px 5px;
+}
+#icon{
+    width: 85px;
+    border-style:solid;
+    border-radius: 50px;
+    border-color:rgb(41, 37, 37);
+}
+.block{
+    float:left;
+    width:50%;
+    margin-right: 15px;
+}
+#about-block{
+    padding-left: 25%;
+}
+#stack-main ul{
+    list-style:none;
+    font-style: italic;
+    font-size: 18px;
+    padding-top: 0;
+    margin: 0;
+}
+#contact-main{
+    height:230px;
+    background-size: 100%;
+    width: 100%;
+}
+#contact-main ul{
+    list-style: none;
+}
+#contact-main a{
+    text-decoration: none;
+    color:cadetblue;
 }

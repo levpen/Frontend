@@ -1,5 +1,5 @@
 body {
-    background-image:url('../images/site-background.jpg'); 
+    background-image:url('../images/site-background.jpg');
     background-size: 150%;
     color: grey;
     font-family:sans-serif;
@@ -75,7 +75,64 @@ ul{
 #contact-main ul{
     list-style: none;
 }
+#contact-main img{
+    width: 20px;
+    padding-left: 5px;
+}
 #contact-main a{
     text-decoration: none;
     color:cadetblue;
+}
+
+
+#converter-main{
+    background-color: #a1c3ff;
+    width: 40%;
+    max-width: 700px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    border-width: 5px;
+    border-color: cadetblue;
+    border-style:solid;
+}
+#apiForm {
+    display: flex;
+    justify-content:center;
+    flex-wrap: wrap;
+}
+.flexBox{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    align-content: center;
+}
+.flexBox p{
+    margin: 0;
+    padding-top: 5px;
+    padding-left: 12px;
+    color: black;
+}
+.flexBox input{
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: cadetblue;
+    background-color: azure;
+}
+.flexBox select{
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    border-color: cadetblue;
+    background-color: azure;
+}
+#apiButton{
+    width: 80%;
+    margin: 5px;
+    border: none;
+    text-decoration: none;
+    background-color: azure;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
 }

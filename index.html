@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My website</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <header id="body-header">
+            <div class="container">
+                <h1>Lev Gorbunkov site</h1>
+            </div>
+            <nav id = "header-links">
+                <div class ="container">
+                    <ul>
+                        <li><a href="#about-main">About Me</a></li>
+                        <li><a href="#stack-main">My Stack</a></li>
+                        <li><a href="#portfolio-main">Portfolio</a></li>
+                        <li><a href="#contact-main">Contact</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <div class = "container" id = "about-main">
+                <h2>About Me</h2>
+                <div id="about-block">
+                    <img src="./images/icon.png" alt="" id="icon" class="block">
+                    <p class="block">Hello, I'm 18 y.o. freshmen in Innopolis Univerity who tries to find his passion in programming.</p>
+                </div>         
+            </div>
+            <div class = "container" id = "stack-main">
+                <h2>My Stack</h2>
+                <p>Preffered programming lanuages:</p>
+                <ul>
+                    <li>Java</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>Python</li>
+                </ul>
+            </div>
+            <div class = "container" id = "portfolio-main">
+                <h2>Portfolio</h2>
+                <p>I have a profound experience with C++ and Java which include several projects that I have done in University. Moreover, I have some experience in olimpiad programming.</p>
+            </div>
+            <div class = "container" id = "contact-main">
+                <h2>Contact</h2>
+                <p>To contact me:</p>
+                <ul>
+                    <li>
+                        <a href="https://github.com/levpen">
+                            GitHub
+                            <img src="./images/git.png" alt="">
+                        </a>
+                        
+                    </li>
+                    <li>
+                        
+                        <a href="https://mail.innopolis.ru/l.gorbunkov@innopolis.university">
+                            Email
+                            <img src="./images/outlook.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://t.me/levgo1337">
+                            Telegram
+                            <img src="./images/telegram.png" alt="">
+                        </a>
+                        
+                    </li>
+                </ul>
+            </div>
+            <div class="container" id="converter-main">
+                <form id="apiForm">
+                    <div class='flexBox'>
+                        <p>Amount</p>
+                        <input type="number" id="apiAmount">
+                    </div>
+                    <div class="flexBox">
+                        <p>From</p>
+                        <select name="" id="apiFrom">
+                            <script>
+                                fetch(`https://open.er-api.com/v6/latest/RUB`)
+                                .then(res => res.json())
+                                .then((data) => {
+                                    for(let i in data.rates){
+                                        document.getElementById('apiFrom').innerHTML += 
+                                        `<option> ${i} </option>`
+                                    }
+                                });
+                            </script>
+                        </select>
+                    </div>
+                    <div class="flexBox">
+                        <p>To</p>
+                        <select name="" id="apiTo">
+                            <script>
+                                fetch(`https://open.er-api.com/v6/latest/RUB`)
+                                .then(res => res.json())
+                                .then((data) => {
+                                    for(let i in data.rates){
+                                        document.getElementById('apiTo').innerHTML += 
+                                        `<option> ${i} </option>`
+                                    }
+                                });
+                            </script>
+                        </select>
+                    </div>
+                    <input type="submit" value="Submit" id="apiButton">
+                    <div class="flexBox" id="apiResult">
+                    </div>
+                </form>
+                <script>
+                    document.getElementById('apiForm').addEventListener('submit', addPost);
+                    function addPost(e) {
+                        e.preventDefault();
+                        let amount = document.getElementById('apiAmount').value;
+                        const fromCurr = document.getElementById('apiFrom').value;
+                        const toCurr = document.getElementById('apiTo').value;
+                        fetch(`https://open.er-api.com/v6/latest/${fromCurr}`)
+                        .then((res) => res.json())
+                        .then((data) => {
+                            let convertedAmount = amount;
+                            for (let i in data.rates) {
+                                if(i === toCurr){
+                                    convertedAmount *= data.rates[i];
+                                    console.log(data.rates[i]);
+                                }
+                            }
+                            document.getElementById('apiResult').innerHTML = 
+                                `<p>${amount} ${fromCurr} = ${convertedAmount} ${toCurr}</p>`
+                        });
+                    }
+                </script>
+            </div>
+        </main>
+        <footer id="footer-bar">
+            <div class="container">
+                <p>Copyright &copy 2022 Lev Gorbunkov. All Rights Reserved.</p>
+                <div class = "icons">
+                    <a href="https://vk.com">
+                        <img src="./images/vk.png"alt=""id="footer-icons">
+                    </a>
+                    <a href="https://youtube.com">
+                        <img src="./images/youtube.png" alt="" id = "footer-icons">
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

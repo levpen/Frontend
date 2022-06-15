@@ -1,5 +1,5 @@
 body {
-    background-image:url('../images/site-background.jpg');
+    background-image:url('./images/site-background.jpg');
     background-size: 150%;
     color: grey;
     font-family:sans-serif;

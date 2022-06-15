@@ -3,6 +3,7 @@
     <head>
         <title>My website</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script defer src="bundle.js"></script>
     </head>
     <body>
         <header id="body-header">
@@ -71,66 +72,23 @@
             </div>
             <div class="container" id="converter-main">
                 <form id="apiForm">
+                    
                     <div class='flexBox'>
                         <p>Amount</p>
                         <input type="number" id="apiAmount">
                     </div>
                     <div class="flexBox">
                         <p>From</p>
-                        <select name="" id="apiFrom">
-                            <script>
-                                fetch(`https://open.er-api.com/v6/latest/RUB`)
-                                .then(res => res.json())
-                                .then((data) => {
-                                    for(let i in data.rates){
-                                        document.getElementById('apiFrom').innerHTML += 
-                                        `<option> ${i} </option>`
-                                    }
-                                });
-                            </script>
-                        </select>
+                        <select name="" id="apiFrom"></select>
                     </div>
                     <div class="flexBox">
                         <p>To</p>
-                        <select name="" id="apiTo">
-                            <script>
-                                fetch(`https://open.er-api.com/v6/latest/RUB`)
-                                .then(res => res.json())
-                                .then((data) => {
-                                    for(let i in data.rates){
-                                        document.getElementById('apiTo').innerHTML += 
-                                        `<option> ${i} </option>`
-                                    }
-                                });
-                            </script>
-                        </select>
+                        <select name="" id="apiTo"> </select>
                     </div>
                     <input type="submit" value="Submit" id="apiButton">
                     <div class="flexBox" id="apiResult">
                     </div>
                 </form>
-                <script>
-                    document.getElementById('apiForm').addEventListener('submit', addPost);
-                    function addPost(e) {
-                        e.preventDefault();
-                        let amount = document.getElementById('apiAmount').value;
-                        const fromCurr = document.getElementById('apiFrom').value;
-                        const toCurr = document.getElementById('apiTo').value;
-                        fetch(`https://open.er-api.com/v6/latest/${fromCurr}`)
-                        .then((res) => res.json())
-                        .then((data) => {
-                            let convertedAmount = amount;
-                            for (let i in data.rates) {
-                                if(i === toCurr){
-                                    convertedAmount *= data.rates[i];
-                                    console.log(data.rates[i]);
-                                }
-                            }
-                            document.getElementById('apiResult').innerHTML = 
-                                `<p>${amount} ${fromCurr} = ${convertedAmount} ${toCurr}</p>`
-                        });
-                    }
-                </script>
             </div>
         </main>
         <footer id="footer-bar">

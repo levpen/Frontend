@@ -1,0 +1,29 @@
+{
+  "name": "frontend",
+  "version": "1.0.0",
+  "description": "My_website",
+  "main": "bundle.js",
+  "scripts": {
+    "tsc": "tsc main.ts",
+    "build": "rollup --config rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/levpen/Frontend.git"
+  },
+  "author": "Lev Gorbunkov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/levpen/Frontend/issues"
+  },
+  "homepage": "https://github.com/levpen/Frontend#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@rollup/plugin-typescript": "^8.3.3",
+    "rollup": "^2.75.6",
+    "rollup-plugin-terser": "^7.0.2",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.3"
+  }
+}
